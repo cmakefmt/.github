@@ -1,60 +1,62 @@
 # `cmakefmt`
 
-`cmakefmt` is a fast, workflow-first CMake formatter built in Rust.
+`cmakefmt` is a fast, correct CMake formatter built in Rust.
 
-It exists to replace the aging Python `cmake-format` tool with a single native
-binary that is easy to install, fast enough for pre-commit and CI, and capable
-enough for real project use.
+It replaces the aging Python `cmake-format` tool with a single native
+binary that is easy to install, fast enough for pre-commit and CI, and
+capable enough for real project use.
 
-## What You Will Find Here
+## Repositories
 
-- The main formatter repository: [`cmakefmt/cmakefmt`](https://github.com/cmakefmt/cmakefmt)
-- Documentation: [cmakefmt.dev](https://cmakefmt.dev)
-- Releases and install guidance: [latest releases](https://github.com/cmakefmt/cmakefmt/releases)
-- Rust crate: [`cmakefmt-rust` on crates.io](https://crates.io/crates/cmakefmt-rust)
+| Repository | Description |
+|---|---|
+| [`cmakefmt/cmakefmt`](https://github.com/cmakefmt/cmakefmt) | Main formatter — CLI, LSP server, library |
+| [`cmakefmt/vscode-cmakefmt`](https://github.com/cmakefmt/vscode-cmakefmt) | VS Code extension |
+| [`cmakefmt/cmakefmt-action`](https://github.com/cmakefmt/cmakefmt-action) | GitHub Action |
+| [`cmakefmt/homebrew-cmakefmt`](https://github.com/cmakefmt/homebrew-cmakefmt) | Homebrew tap |
+
+## Install
+
+```bash
+brew install cmakefmt/cmakefmt/cmakefmt   # macOS
+cargo install cmakefmt-rust               # any platform
+```
+
+Or download a pre-built binary from [GitHub Releases](https://github.com/cmakefmt/cmakefmt/releases/latest).
+
+Also available on [winget](https://github.com/microsoft/winget-pkgs), the
+[VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=cmakefmt.vscode-cmakefmt),
+and as a [Docker image](https://ghcr.io/cmakefmt/cmakefmt).
 
 ## Why `cmakefmt`?
 
-- Fast enough for editor-on-save, pre-commit hooks, and CI
-- Distributed as one native binary, with no Python environment to manage
-- Designed around real workflows: `--check`, `--diff`, `--staged`, `--changed`,
-  machine-readable reports, and config introspection
-- Aware of custom command signatures, so project-specific macros and functions
-  format sensibly
-- Built to preserve comments, support formatter disable regions, and behave
-  predictably across whole repositories
+- **Fast** — 25× faster than `cmake-format`; fast enough for editor-on-save, pre-commit hooks, and CI
+- **One binary** — no Python environment to manage
+- **LSP server** — `cmakefmt lsp` provides format-on-save in any editor
+- **Workflow-first** — `--check`, `--diff`, `--staged`, `--changed`, machine-readable reports, and config introspection
+- **Custom command aware** — project-specific macros and functions format sensibly
+- **Comments preserved** — barrier regions, fence blocks, and pragma support
 
 ## Quick Start
 
 ```bash
-brew install cmakefmt/cmakefmt/cmakefmt
 cmakefmt --version
-cmakefmt --check .
-cmakefmt --in-place .
+cmakefmt init                  # generate a starter config
+cmakefmt --check .             # dry-run: show what would change
+cmakefmt --in-place .          # apply formatting
 ```
 
-Rust users can also install via:
-
-```bash
-cargo install cmakefmt-rust
-```
-
-## Start Here
+## Documentation
 
 - [Getting Started](https://cmakefmt.dev/getting-started/)
 - [CLI Reference](https://cmakefmt.dev/cli/)
 - [Config Reference](https://cmakefmt.dev/config/)
+- [Editor Integration](https://cmakefmt.dev/editors/)
 - [Migration from `cmake-format`](https://cmakefmt.dev/migration/)
 - [Performance](https://cmakefmt.dev/performance/)
-- [Library API](https://cmakefmt.dev/api/)
-
-## Status
-
-`cmakefmt` is actively maintained and already usable on real projects. It is
-still pre-`1.0`, so formatter behavior and packaging details may continue to
-evolve as the tool matures.
+- [Playground](https://cmakefmt.dev/playground/)
 
 ## Contributing
 
-Issues, bug reports, regression cases, and pull requests are welcome in
+Issues, bug reports, and pull requests are welcome in
 [`cmakefmt/cmakefmt`](https://github.com/cmakefmt/cmakefmt).
