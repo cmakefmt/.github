@@ -20,12 +20,15 @@ capable enough for real project use.
 ```bash
 brew install cmakefmt/cmakefmt/cmakefmt   # macOS
 cargo install cmakefmt-rust               # any platform
+pip install cmakefmt                      # any platform with Python
+conda install -c conda-forge cmakefmt     # conda-forge
 ```
 
 Or download a pre-built binary from [GitHub Releases](https://github.com/cmakefmt/cmakefmt/releases/latest).
 
 Also available on [winget](https://github.com/microsoft/winget-pkgs), the
 [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=cmakefmt.vscode-cmakefmt),
+[Open VSX Registry](https://open-vsx.org/extension/cmakefmt/vscode-cmakefmt),
 and as a [Docker image](https://ghcr.io/cmakefmt/cmakefmt).
 
 ## Why `cmakefmt`?
