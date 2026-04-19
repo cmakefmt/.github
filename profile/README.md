@@ -43,10 +43,12 @@ and as a [Docker image](https://ghcr.io/cmakefmt/cmakefmt).
 ## Quick Start
 
 ```bash
-cmakefmt --version
-cmakefmt init                  # generate a starter config
-cmakefmt --check .             # dry-run: show what would change
-cmakefmt --in-place .          # apply formatting
+cmakefmt config init               # generate a starter .cmakefmt.yaml
+cmakefmt .                         # preview formatted output
+cmakefmt --diff .                  # view a unified diff of what would change
+cmakefmt --in-place .              # apply formatting across the whole project
+cmakefmt --staged --check          # use in pre-commit hooks
+cmakefmt --path-regex 'src/.*' .   # format CMake files only under src/
 ```
 
 ## Documentation
