@@ -19,8 +19,8 @@ capable enough for real project use.
 
 ```bash
 brew install cmakefmt/cmakefmt/cmakefmt   # macOS
-cargo install cmakefmt-rust               # any platform
 pip install cmakefmt                      # any platform with Python
+cargo install cmakefmt-rust               # any platform
 conda install -c conda-forge cmakefmt     # conda-forge
 ```
 
