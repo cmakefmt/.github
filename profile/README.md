@@ -33,7 +33,7 @@ and as a [Docker image](https://ghcr.io/cmakefmt/cmakefmt).
 
 ## Why `cmakefmt`?
 
-- **Fast** — 48× faster than `cmake-format`; fast enough for editor-on-save, pre-commit hooks, and CI
+- **Fast** — 104× faster than `cmake-format` (geo-mean across 11 real-world fixtures); fast enough for editor-on-save, pre-commit hooks, and CI
 - **One binary** — no Python environment to manage
 - **LSP server** — `cmakefmt lsp` provides format-on-save in any editor
 - **Workflow-first** — `--check`, `--diff`, `--staged`, `--changed`, machine-readable reports, and config introspection
